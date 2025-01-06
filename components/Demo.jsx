@@ -77,13 +77,13 @@ export default function Demo() {
             </div>
 
             <DotPattern
-                width={20}
-                height={20}
+                width={16}
+                height={16}
                 cx={1}
                 cy={1}
                 cr={1}
                 className={cn(
-                    "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] ",
+                    "[mask-image:linear-gradient(to_bottom_left,white,transparent,transparent)] ",
                 )}
             />
         </main>
