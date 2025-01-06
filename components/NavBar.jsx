@@ -412,8 +412,8 @@ export default function NavBar() {
                         <DropdownItem key="header" className="text-gray-400 deactivate-hover">Company</DropdownItem>
                         <DropdownItem key="new" className="py-3 pr-4 mb-1">Customer</DropdownItem>
                         <DropdownItem key="copy" className="py-3 pr-4 mb-1">About</DropdownItem>
-                        <DropdownItem key="edit" className="py-3 pr-4 mb-1">Careers</DropdownItem>
-                        <DropdownItem key="edit" className="py-3 pr-4 mb-1">Partner</DropdownItem>
+                        <DropdownItem key="careers" className="py-3 pr-4 mb-1">Careers</DropdownItem>
+                        <DropdownItem key="partner" className="py-3 pr-4 mb-1">Partner</DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
 
