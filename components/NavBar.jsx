@@ -16,19 +16,6 @@ import {
 import Image from "next/image";
 import { FaFire, FaProjectDiagram, FaPaperPlane, FaRobot, FaChartBar } from 'react-icons/fa';
 
-// export const AcmeLogo = () => {
-//     return (
-//         <svg fill="none" height="36" viewBox="0 0 32 32" width="36">
-//             <path
-//                 clipRule="evenodd"
-//                 d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
-//                 fill="currentColor"
-//                 fillRule="evenodd"
-//             />
-//         </svg>
-//     );
-// };
-
 export const ChevronDown = ({ fill, size, height, width, ...props }) => {
     return (
         <svg
@@ -234,26 +221,39 @@ export default function NavBar() {
         user: <TagUser className="text-danger" fill="currentColor" size={30} />,
     };
 
-    const [isScrolled, setIsScrolled] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
 
     useEffect(() => {
-        const checkScrollHeight = () => {
-            const screenHeight = window.innerHeight;
-            const scrollHeight = document.documentElement.scrollHeight; // Total scrollable content
-            const heightRatio = scrollHeight / screenHeight;
+        let lastScrollY = window.scrollY;
 
-            setIsScrolled(heightRatio > 1.02);
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            console.log(currentScrollY)
+
+            // Detect scroll direction
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                setIsHidden(true); // Scrolling down
+            } else if (currentScrollY < 100) {
+                setIsHidden(false); // Scrolling up
+            }
+            lastScrollY = currentScrollY;
         };
 
-        // Run on initial render and window resize
-        checkScrollHeight();
-        window.addEventListener("resize", checkScrollHeight);
+        window.addEventListener("scroll", handleScroll);
 
-        // Cleanup on component unmount
         return () => {
-            window.removeEventListener("resize", checkScrollHeight);
+            window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const [openDropdownId, setOpenDropdownId] = useState(null); // Tracks which dropdown is open
+
+    const handleOpenChange = (id, isOpen) => {
+        setOpenDropdownId(isOpen ? id : null); // Open only the current dropdown
+    };
+
 
     return (
         <Navbar className="dark py-2">
@@ -263,208 +263,233 @@ export default function NavBar() {
 
             <NavbarContent className="hidden sm:flex gap-3" justify="center">
 
-                <Dropdown className="dark relative left-96 top-4 bg-[#222222] rounded-lg">
-                    {/* <NavbarItem> */}
-                    <DropdownTrigger>
-                        <Button
-                            disableRipple
-                            className="p-4 bg-transparent hover:bg-[#333333]"
-                            endContent={
-                                <span className="transition-transform transform hover:rotate-180">
-                                    {icons.chevron}
-                                </span>
-                            }
-                            radius="sm"
-                        >
-                            Products
-                        </Button>
-                    </DropdownTrigger>
-                    {/* </NavbarItem> */}
-                    <DropdownMenu aria-label="Products" className="hover:bg-[#222222]">
-                        <DropdownItem key="products" className="w-auto min-w-[200px] max-w-[800px] hover:bg-[#222222]">
-                            <h4 className="pl-4">Products</h4>
-                            <div className="grid grid-cols-3 gap-6">
-                                <a
-                                    href="/signals"
-                                    className="flex items-start gap-4 p-4 rounded-lg transition-colors hover:bg-gray-500"
-                                >
-                                    <div className="flex items-center justify-center w-20 h-10 rounded-full bg-amber-900/20">
-                                        <FaFire className="w-5 h-5 text-amber-700" />
-                                    </div>
-                                    <div className="flex flex-col gap-1">
-                                        <span className="text-base font-medium">Signals</span>
-                                        <p className="text-sm text-gray-500">
-                                            Use 10+ signals to capture buyer intent and build Audiences
-                                        </p>
-                                    </div>
-                                </a>
-
-                                <a
-                                    href="/plays"
-                                    className="flex items-start gap-4 p-4 rounded-lg transition-colors hover:bg-slate-600"
-                                >
-                                    <div className="flex items-center justify-center w-20 h-10 rounded-full bg-teal-500/20">
-                                        <FaProjectDiagram className="w-5 h-5 text-teal-700" />
-                                    </div>
-                                    <div className="flex flex-col gap-1">
-                                        <span className="text-base font-medium">Plays</span>
-                                        <p className="text-sm text-gray-500">
-                                            One workflow to prospect, enrich, and sequence on autopilot
-                                        </p>
-                                    </div>
-                                </a>
-
-                                <a
-                                    href="/sequences"
-                                    className="flex items-start gap-4 p-4 rounded-lg transition-colors hover:bg-slate-600"
-                                >
-                                    <div className="flex items-center justify-center w-20 h-10 rounded-full bg-purple-500/20">
-                                        <FaPaperPlane className="w-5 h-5 text-purple-700" />
-                                    </div>
-                                    <div className="flex flex-col gap-1">
-                                        <span className="text-base font-medium">
-                                            Sequences
-                                        </span>
-                                        <p className="text-sm text-gray-500">
-                                            Engage buyers with multi-touch outbound and managed deliverability
-                                        </p>
-                                    </div>
-                                </a>
-
-                                <a
-                                    href="/ai"
-                                    className="flex items-start gap-4 p-4 rounded-lg transition-colors hover:bg-slate-600"
-                                >
-                                    <div className="flex items-center justify-center w-20 h-10 rounded-full bg-blue-500/20">
-                                        <FaRobot className="w-5 h-5 text-blue-700" />
-                                    </div>
-                                    <div className="flex flex-col gap-1">
-                                        <span className="text-base font-medium">
-                                            AI Agents
-                                        </span>
-                                        <p className="text-sm text-gray-500">
-                                            Use AI to research leads and personalize messaging at scale
-                                        </p>
-                                    </div>
-                                </a>
-
-                                <a
-                                    href="/analytics"
-                                    className="flex items-start gap-4 p-4 rounded-lg transition-colors hover:bg-slate-600"
-                                >
-                                    <div className="flex items-center justify-center w-20 h-10 rounded-full bg-pink-500/20">
-                                        <FaChartBar className="w-5 h-5 text-pink-700" />
-                                    </div>
-                                    <div className="flex flex-col gap-1">
-                                        <span className="text-base font-medium">
-                                            Analytics & Dashboards
-                                        </span>
-                                        <p className="text-sm text-gray-500">
-                                            Understand Play performance, pipeline generation, email metrics,
-                                            and more
-                                        </p>
-                                    </div>
-                                </a>
-                            </div>
-                        </DropdownItem>
-                    </DropdownMenu>x
-                </Dropdown>
-
-                <Dropdown className="bg-[#222222] border-2 border-[#333333]">
-                    <DropdownTrigger>
-                        <Button
-                            disableRipple
-                            className="p-4 bg-transparent hover:bg-[#333333]"
-                            endContent={
-                                <span className="transition-transform transform hover:rotate-180">
-                                    {icons.chevron}
-                                </span>
-                            }
-                            radius="sm"
-                        >
-                            Use Cases
-                        </Button>
-                    </DropdownTrigger>
-                    <DropdownMenu aria-label="Action event example">
-                        <DropdownItem key="header" className="text-gray-400 deactivate-hover">Use Cases</DropdownItem>
-                        <DropdownItem key="new" className="py-3 pr-4 mb-1">Intent based triggers</DropdownItem>
-                        <DropdownItem key="copy" className="py-3 pr-4 mb-1">Third party signals</DropdownItem>
-                        <DropdownItem key="edit" className="py-3 pr-4 mb-1">All use cases</DropdownItem>
-                    </DropdownMenu>
-                </Dropdown>
-
-                <Dropdown className="bg-[#222222] border-2 border-[#333333]">
-                    <DropdownTrigger>
-                        <Button
-                            disableRipple
-                            className="p-4 bg-transparent hover:bg-[#333333]"
-                            endContent={
-                                <span className="transition-transform transform hover:rotate-180">
-                                    {icons.chevron}
-                                </span>
-                            }
-                            radius="sm"
-                        >
-                            Company
-                        </Button>
-                    </DropdownTrigger>
-                    <DropdownMenu aria-label="Action event example">
-                        <DropdownItem key="header" className="text-gray-400 deactivate-hover">Company</DropdownItem>
-                        <DropdownItem key="new" className="py-3 pr-4 mb-1">Customer</DropdownItem>
-                        <DropdownItem key="copy" className="py-3 pr-4 mb-1">About</DropdownItem>
-                        <DropdownItem key="careers" className="py-3 pr-4 mb-1">Careers</DropdownItem>
-                        <DropdownItem key="partner" className="py-3 pr-4 mb-1">Partner</DropdownItem>
-                    </DropdownMenu>
-                </Dropdown>
-
-                <Dropdown className="bg-[#222222] border-2 border-[#333333]">
-                    <DropdownTrigger>
-                        <Button
-                            disableRipple
-                            className="p-4 bg-transparent hover:bg-[#333333]"
-                            endContent={
-                                <span className="transition-transform transform hover:rotate-180">
-                                    {icons.chevron}
-                                </span>
-                            }
-                            radius="sm"
-                        >
-                            Resources
-                        </Button>
-                    </DropdownTrigger>
-                    <DropdownMenu aria-label="Action event example">
-                        <DropdownItem key="header" className="text-gray-400 deactivate-hover">Resources</DropdownItem>
-                        <DropdownItem key="new" className="py-3 pr-4 mb-1">Support</DropdownItem>
-                        <DropdownItem key="copy" className="py-3 pr-4 mb-1">Blog</DropdownItem>
-                    </DropdownMenu>
-                </Dropdown>
-
-                {/* <Dropdown className="">
-                    <DropdownTrigger>
-                        <div className="dropdown-container border-gray-400 bg-[#222222] w-auto min-w-56 outline-gray-300 ">
+                <div
+                    key={1}
+                    onMouseEnter={() => handleOpenChange(1, true)}
+                    onMouseLeave={() => handleOpenChange(1, false)}
+                    className="relative" // To ensure proper hover containment
+                >
+                    <Dropdown
+                        className="bg-[#222222] border-2 border-[#333333] relative left-96"
+                        isOpen={openDropdownId === 1}
+                        onOpenChange={(isOpen) => handleOpenChange(1, isOpen)}
+                    >
+                        {/* <NavbarItem> */}
+                        <DropdownTrigger>
                             <Button
                                 disableRipple
                                 className="p-4 bg-transparent hover:bg-[#333333]"
                                 endContent={
-                                    <span className="chevron-icon transition-transform transform">
+                                    <span className={`transition-transform transform ${openDropdownId === 1 ? "rotate-180" : "rotate-0"}`}>
                                         {icons.chevron}
                                     </span>
                                 }
                                 radius="sm"
-                                variant="light"
+                            >
+                                Products
+                            </Button>
+                        </DropdownTrigger>
+                        {/* </NavbarItem> */}
+                        <DropdownMenu aria-label="Products" className="deactivate-hover">
+                            <DropdownItem key="products" className="w-auto min-w-[200px] max-w-[800px] ">
+                                <h4 className="pl-4">Products</h4>
+                                <div className="dark grid grid-cols-3 gap-6">
+                                    <a
+                                        href="/signals"
+                                        className="flex items-start gap-4 p-4 rounded-lg transition-colors hover:bg-[#333333]"
+                                    >
+                                        <div className="flex items-center justify-center w-20 h-10 rounded-full bg-amber-900/20">
+                                            <FaFire className="w-5 h-5 text-amber-700" />
+                                        </div>
+                                        <div className="flex flex-col gap-1">
+                                            <span className="text-base font-medium">Signals</span>
+                                            <p className="text-sm text-gray-500">
+                                                Use 10+ signals to capture buyer intent and build Audiences
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                    <a
+                                        href="/plays"
+                                        className="flex items-start gap-4 p-4 rounded-lg transition-colors hover:bg-[#333333]"
+                                    >
+                                        <div className="flex items-center justify-center w-20 h-10 rounded-full bg-teal-500/20">
+                                            <FaProjectDiagram className="w-5 h-5 text-teal-700" />
+                                        </div>
+                                        <div className="flex flex-col gap-1">
+                                            <span className="text-base font-medium">Plays</span>
+                                            <p className="text-sm text-gray-500">
+                                                One workflow to prospect, enrich, and sequence on autopilot
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                    <a
+                                        href="/sequences"
+                                        className="flex items-start gap-4 p-4 rounded-lg transition-colors hover:bg-[#333333]"
+                                    >
+                                        <div className="flex items-center justify-center w-20 h-10 rounded-full bg-purple-500/20">
+                                            <FaPaperPlane className="w-5 h-5 text-purple-700" />
+                                        </div>
+                                        <div className="flex flex-col gap-1">
+                                            <span className="text-base font-medium">
+                                                Sequences
+                                            </span>
+                                            <p className="text-sm text-gray-500">
+                                                Engage buyers with multi-touch outbound and managed deliverability
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                    <a
+                                        href="/ai"
+                                        className="flex items-start gap-4 p-4 rounded-lg transition-colors hover:bg-[#333333]"
+                                    >
+                                        <div className="flex items-center justify-center w-20 h-10 rounded-full bg-blue-500/20">
+                                            <FaRobot className="w-5 h-5 text-blue-700" />
+                                        </div>
+                                        <div className="flex flex-col gap-1">
+                                            <span className="text-base font-medium">
+                                                AI Agents
+                                            </span>
+                                            <p className="text-sm text-gray-500">
+                                                Use AI to research leads and personalize messaging at scale
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                    <a
+                                        href="/analytics"
+                                        className="flex items-start gap-4 p-4 rounded-lg transition-colors hover:bg-[#333333]"
+                                    >
+                                        <div className="flex items-center justify-center w-20 h-10 rounded-full bg-pink-500/20">
+                                            <FaChartBar className="w-5 h-5 text-pink-700" />
+                                        </div>
+                                        <div className="flex flex-col gap-1">
+                                            <span className="text-base font-medium">
+                                                Analytics & Dashboards
+                                            </span>
+                                            <p className="text-sm text-gray-500">
+                                                Understand Play performance, pipeline generation, email metrics,
+                                                and more
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </DropdownItem>
+                        </DropdownMenu>
+                    </Dropdown>
+                </div>
+
+                <div
+                    key={2}
+                    onMouseEnter={() => handleOpenChange(2, true)}
+                    onMouseLeave={() => handleOpenChange(2, false)}
+                    className="relative" // To ensure proper hover containment
+                >
+                    <Dropdown
+                        className="bg-[#222222] border-2 border-[#333333]"
+                        isOpen={openDropdownId === 2}
+                        onOpenChange={(isOpen) => handleOpenChange(2, isOpen)}
+                    >
+                        <DropdownTrigger>
+                            <Button
+                                disableRipple
+                                className="p-4 bg-transparent hover:bg-[#333333]"
+                                endContent={
+                                    <span className={`transition-transform transform ${openDropdownId === 2 ? "rotate-180" : "rotate-0"}`}>
+                                        {icons.chevron}
+                                    </span>
+                                }
+                                radius="sm"
+                            >
+                                Use Cases
+                            </Button>
+                        </DropdownTrigger>
+                        <DropdownMenu aria-label="Action event example" className="dark">
+                            <DropdownItem key="header" className="text-gray-400 deactivate-hover">
+                                Use Cases
+                            </DropdownItem>
+                            <DropdownItem key="new" className="py-3 pr-4 mb-1">
+                                Intent based triggers
+                            </DropdownItem>
+                            <DropdownItem key="copy" className="py-3 pr-4 mb-1">
+                                Third party signals
+                            </DropdownItem>
+                            <DropdownItem key="edit" className="py-3 pr-4 mb-1">
+                                All use cases
+                            </DropdownItem>
+                        </DropdownMenu>
+                    </Dropdown>
+                </div>
+
+                <div
+                    key={3}
+                    onMouseEnter={() => handleOpenChange(3, true)}
+                    onMouseLeave={() => handleOpenChange(3, false)}
+                    className="relative" // To ensure proper hover containment
+                >
+                    <Dropdown
+                        className="bg-[#222222] border-2 border-[#333333]"
+                        isOpen={openDropdownId === 3}
+                        onOpenChange={(isOpen) => handleOpenChange(3, isOpen)}
+                    >
+                        <DropdownTrigger>
+                            <Button
+                                disableRipple
+                                className="p-4 bg-transparent hover:bg-[#333333]"
+                                endContent={
+                                    <span className={`transition-transform transform ${openDropdownId === 3 ? "rotate-180" : "rotate-0"}`}>
+                                        {icons.chevron}
+                                    </span>
+                                }
+                                radius="sm"
                             >
                                 Company
                             </Button>
-                            <DropdownMenu className="dropdown-menu" aria-label="Action event example">
-                                <DropdownItem key="header" className="text-gray-300 deactivate-hover">Company</DropdownItem>
-                                <DropdownItem key="new" className="py-3 mb-1">Customer</DropdownItem>
-                                <DropdownItem key="new" className="py-3 mb-1">About</DropdownItem>
-                                <DropdownItem key="copy" className="py-3 mb-1">Careers</DropdownItem>
-                                <DropdownItem key="edit" className="py-3 mb-1">Partner Program</DropdownItem>
-                            </DropdownMenu>
-                        </div>
-                    </DropdownTrigger>
-                </Dropdown> */}
+                        </DropdownTrigger>
+                        <DropdownMenu aria-label="Action event example" className="dark">
+                            <DropdownItem key="header" className="text-gray-400 deactivate-hover">Company</DropdownItem>
+                            <DropdownItem key="new" className="py-3 pr-4 mb-1">Customer</DropdownItem>
+                            <DropdownItem key="copy" className="py-3 pr-4 mb-1">About</DropdownItem>
+                            <DropdownItem key="careers" className="py-3 pr-4 mb-1">Careers</DropdownItem>
+                            <DropdownItem key="partner" className="py-3 pr-4 mb-1">Partner</DropdownItem>
+                        </DropdownMenu>
+                    </Dropdown>
+                </div>
+
+                <div
+                    key={4}
+                    onMouseEnter={() => handleOpenChange(4, true)}
+                    onMouseLeave={() => handleOpenChange(4, false)}
+                    className="relative" // To ensure proper hover containment
+                >
+                    <Dropdown
+                        className="bg-[#222222] border-2 border-[#333333]"
+                        isOpen={openDropdownId === 4}
+                        onOpenChange={(isOpen) => handleOpenChange(4, isOpen)}
+                    >
+                        <DropdownTrigger>
+                            <Button
+                                disableRipple
+                                className="p-4 bg-transparent hover:bg-[#333333]"
+                                endContent={
+                                    <span className={`transition-transform transform ${openDropdownId === 4 ? "rotate-180" : "rotate-0"}`}>
+                                        {icons.chevron}
+                                    </span>
+                                }
+                                radius="sm"
+                            >
+                                Resources
+                            </Button>
+                        </DropdownTrigger>
+                        <DropdownMenu aria-label="Action event example" className="dark">
+                            <DropdownItem key="header" className="text-gray-400 deactivate-hover">Resources</DropdownItem>
+                            <DropdownItem key="new" className="py-3 pr-4 mb-1">Support</DropdownItem>
+                            <DropdownItem key="copy" className="py-3 pr-4 mb-1">Blog</DropdownItem>
+                        </DropdownMenu>
+                    </Dropdown>
+                </div>
 
                 <NavbarItem>
                     <Link color="foreground" href="#">
@@ -472,7 +497,10 @@ export default function NavBar() {
                     </Link>
                 </NavbarItem>
 
-                <NavbarItem className={`relative left-6 ${isScrolled ? "" : ""}`}>
+                <NavbarItem
+                    className={`relative left-6 transition-transform duration-500 ${isHidden ? "-translate-y-10 opacity-0" : "translate-y-0 opacity-100"
+                        }`}
+                >
                     <Link color="foreground" href="#">
                         Product tour
                     </Link>
@@ -481,11 +509,35 @@ export default function NavBar() {
 
 
             </NavbarContent>
-            
+
             <NavbarContent justify="end" className="relative left-28">
-                <NavbarItem className="hidden lg:flex">
-                    {/* <Link href="#">Login</Link> */}
-                    <Button radius="sm" variant="ghost">Sign in</Button>
+                <NavbarItem
+                    className={`hidden lg:flex transition-transform duration-500 easeInOut ${isHidden
+                        ? "opacity-0 translate-y-5 pointer-events-none"
+                        : "opacity-100 translate-y-0"
+                        }`}
+                    style={{
+                        position: isHidden ? "absolute" : "relative",
+                    }}
+                >
+                    <Button radius="sm" variant="ghost">
+                        Sign in
+                    </Button>
+                </NavbarItem>
+
+                {/* Show 'Explore Products' when hidden */}
+                <NavbarItem
+                    className={`hidden lg:flex transition-transform duration-1000 easeInOut ${isHidden
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 -translate-y-5 pointer-events-none"
+                        }`}
+                    style={{
+                        position: isHidden ? "relative" : "absolute",
+                    }}
+                >
+                    <Button radius="sm" variant="ghost">
+                        Explore Products
+                    </Button>
                 </NavbarItem>
                 <NavbarItem>
                     <Button radius="sm" variant="solid" className="light">Get Started</Button>
