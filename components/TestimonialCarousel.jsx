@@ -110,7 +110,7 @@ export function TestimonialCarousel() {
                             variant="flat"
                             className="bg-gray-800/50 text-white"
                             isDisabled={!canScrollLeft}
-                            onPress={handlePrevious}
+                            onClick={handlePrevious}
                         >
                             <ArrowLeft className="w-4 h-4" />
                         </Button>
@@ -119,7 +119,7 @@ export function TestimonialCarousel() {
                             variant="flat"
                             className="bg-gray-800/50 text-white"
                             isDisabled={!canScrollRight}
-                            onPress={handleNext}
+                            onClick={handleNext}
                         >
                             <ArrowRight className="w-4 h-4" />
                         </Button>
@@ -129,7 +129,7 @@ export function TestimonialCarousel() {
                 <div className="relative overflow-hidden">
                     <div
                         className="flex gap-6 transition-transform duration-300 ease-in-out"
-                        style={{ transform: `translateX(-${currentIndex * (100 / 3)}%)` }}
+                        style={{ transform: `translateX(-${currentIndex * (85)}%)` }}
                     >
                         {testimonials.map((testimonial, index) => (
                             <Card

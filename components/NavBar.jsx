@@ -267,7 +267,7 @@ export default function NavBar() {
 
 
     return (
-        <Navbar className="dark py-2 w-full" isBlurred="false">
+        <Navbar className="dark py-2 w-full">
             <NavbarBrand className="relative lg:right-12 xl:right-24">
                 <Image src="/logo.svg" alt="Logo" width="90" height="90" ></Image>
             </NavbarBrand>
@@ -524,7 +524,7 @@ export default function NavBar() {
                 <NavbarMenuItem className="border-b-2 border-[#3e3e3e] pb-2">
                     <div
                         key={5}
-                        onPress={() => handleOpenNavbarMenu(5, !isOpenNavbarMenu)}
+                        onClick={() => handleOpenNavbarMenu(5, !isOpenNavbarMenu)}
                         className="relative" // To ensure proper hover containment
                     >
                         <div className="flex justify-between"
@@ -546,7 +546,7 @@ export default function NavBar() {
                 <NavbarMenuItem className="border-b-2 border-[#3e3e3e] pb-2">
                     <div
                         key={6}
-                        onPress={() => handleOpenNavbarMenu(6, !isOpenNavbarMenu)}
+                        onClick={() => handleOpenNavbarMenu(6, !isOpenNavbarMenu)}
                         className="relative" // To ensure proper hover containment
                     >
                         <div className="flex justify-between"
@@ -568,7 +568,7 @@ export default function NavBar() {
                 <NavbarMenuItem className="border-b-2 border-[#3e3e3e] pb-2">
                     <div
                         key={7}
-                        onPress={() => handleOpenNavbarMenu(7, !isOpenNavbarMenu)}
+                        onClick={() => handleOpenNavbarMenu(7, !isOpenNavbarMenu)}
                         className="relative" // To ensure proper hover containment
                     >
                         <div className="flex justify-between"
@@ -590,7 +590,7 @@ export default function NavBar() {
                 <NavbarMenuItem className="border-b-2 border-[#3e3e3e] pb-2">
                     <div
                         key={8}
-                        onPress={() => handleOpenNavbarMenu(8, !isOpenNavbarMenu)}
+                        onClick={() => handleOpenNavbarMenu(8, !isOpenNavbarMenu)}
                         className="relative" // To ensure proper hover containment
                     >
                         <div className="flex justify-between"
@@ -614,6 +614,14 @@ export default function NavBar() {
                 </NavbarMenuItem>
                 <NavbarMenuItem>
                     <a href="/product-tour">Product Tour</a>
+                </NavbarMenuItem>
+                <NavbarMenuItem className="flex justify-center items-center gap-2">
+                    <Button radius="sm" variant="faded" className="p-5">
+                        Sign in
+                    </Button>
+                    <Button radius="sm" variant="solid" className="light">
+                        Get Started
+                    </Button>
                 </NavbarMenuItem>
             </NavbarMenu>
 
