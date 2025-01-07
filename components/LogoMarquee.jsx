@@ -97,7 +97,8 @@ export function LogoMarquee() {
                     </div>
                 </div>
             </section>
-            <section className='space-y-5 ml-36 mt-8 pb-8'>
+            {/* md:ml-36 md:px-0 */}
+            <section className=' space-y-5 text-center lg:text-left  pb-8 mt-8 lg:mx-28'>
                 <h1 className='font-bold text-4xl'>An all-in-one solution for warm outbound.</h1>
                 <h3 className="text-[#8b8b8b] text-">Bring your most creative go-to-market ideas – we handle the execution.</h3>
             </section>

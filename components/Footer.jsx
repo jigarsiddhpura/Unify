@@ -23,7 +23,7 @@ export function Footer() {
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-16">
                     {Object.entries(footerLinks).map(([category, links]) => (
                         <div key={category}>
-                            <h3 className="text-gray-300 font-medium mb-4">{category}</h3>
+                            <h3 className="text-gray-300 font-light sm:font-medium mb-4">{category}</h3>
                             <ul className="space-y-3">
                                 {links.map((link) => (
                                     <li key={link}>
@@ -44,8 +44,8 @@ export function Footer() {
                 <div className="h-px bg-gray-800 mb-8" />
 
                 {/* Bottom Footer */}
-                <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                    <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+                <div className="flex flex-col md:flex-row md:items-center justify-between space-y-4 md:space-y-0">
+                    <div className="flex flex-col md:flex-row flex-wrap md:items-center gap-x-6 gap-y-2">
                         <span>Unify © 2025</span>
                         <Link href="#" className="hover:text-white transition-colors duration-200">
                             Terms

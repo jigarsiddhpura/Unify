@@ -12,6 +12,7 @@ import {
     DropdownTrigger,
     Dropdown,
     DropdownMenu,
+    NavbarMenu, NavbarMenuToggle, NavbarMenuItem
 } from "@nextui-org/react";
 import Image from "next/image";
 import { FaFire, FaProjectDiagram, FaPaperPlane, FaRobot, FaChartBar } from 'react-icons/fa';
@@ -228,7 +229,6 @@ export default function NavBar() {
 
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
-            console.log(currentScrollY)
 
             // Detect scroll direction
             if (currentScrollY > lastScrollY && currentScrollY > 100) {
@@ -254,14 +254,25 @@ export default function NavBar() {
         setOpenDropdownId(isOpen ? id : null); // Open only the current dropdown
     };
 
+    const [isOpenNavbarMenu, setIsOpenNavbarMenu] = useState(false);
+
+    const [openNavbarMenuId, setOpenNavbarMenuId] = useState(null); // Tracks which dropdown is open
+
+    const handleOpenNavbarMenu = (id, isOpen) => {
+        setIsOpenNavbarMenu(isOpen);
+        setOpenNavbarMenuId(isOpen ? id : null); // Open only the current dropdown
+    };
+
+
+
 
     return (
-        <Navbar className="dark py-2">
-            <NavbarBrand className="relative right-24">
+        <Navbar className="dark py-2 w-full" isBlurred="false">
+            <NavbarBrand className="relative lg:right-12 xl:right-24">
                 <Image src="/logo.svg" alt="Logo" width="90" height="90" ></Image>
             </NavbarBrand>
 
-            <NavbarContent className="hidden sm:flex gap-3" justify="center">
+            <NavbarContent className="hidden lg:flex  lg:gap-3" justify="center">
 
                 <div
                     key={1}
@@ -278,7 +289,7 @@ export default function NavBar() {
                         <DropdownTrigger>
                             <Button
                                 disableRipple
-                                className="p-4 bg-transparent hover:bg-[#333333]"
+                                className="xl:p-4 bg-transparent hover:bg-[#333333]"
                                 endContent={
                                     <span className={`transition-transform transform ${openDropdownId === 1 ? "rotate-180" : "rotate-0"}`}>
                                         {icons.chevron}
@@ -395,7 +406,7 @@ export default function NavBar() {
                         <DropdownTrigger>
                             <Button
                                 disableRipple
-                                className="p-4 bg-transparent hover:bg-[#333333]"
+                                className="xl:p-4 bg-transparent hover:bg-[#333333]"
                                 endContent={
                                     <span className={`transition-transform transform ${openDropdownId === 2 ? "rotate-180" : "rotate-0"}`}>
                                         {icons.chevron}
@@ -506,11 +517,107 @@ export default function NavBar() {
                     </Link>
                 </NavbarItem>
 
-
-
             </NavbarContent>
 
-            <NavbarContent justify="end" className="relative left-28">
+            <NavbarMenuToggle className="lg:hidden" />
+            <NavbarMenu className="dark block lg:hidden bg-transparent space-y-4 py-4 px-8 text-xs">
+                <NavbarMenuItem className="border-b-2 border-[#3e3e3e] pb-2">
+                    <div
+                        key={5}
+                        onPress={() => handleOpenNavbarMenu(5, !isOpenNavbarMenu)}
+                        className="relative" // To ensure proper hover containment
+                    >
+                        <div className="flex justify-between"
+                        >
+                            <p>Products</p>
+                            <span className={`mt-2 transition-transform transform ${openNavbarMenuId === 5 ? "rotate-180" : "rotate-0"}`}>
+                                {icons.chevron}
+                            </span>
+                        </div>
+                        <div className={`flex-col ${openNavbarMenuId === 5 ? "flex" : "hidden"}`}>
+                            {['Signals', 'Plays', 'Sequences', 'AI Agents', 'Analytics & Dashboards'].map((item) => (
+                                <span key={item} className="text-xs md:text-sm py-3">
+                                    {item}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </NavbarMenuItem>
+                <NavbarMenuItem className="border-b-2 border-[#3e3e3e] pb-2">
+                    <div
+                        key={6}
+                        onPress={() => handleOpenNavbarMenu(6, !isOpenNavbarMenu)}
+                        className="relative" // To ensure proper hover containment
+                    >
+                        <div className="flex justify-between"
+                        >
+                            <p>Use Cases</p>
+                            <span className={`mt-2 transition-transform transform ${openNavbarMenuId === 6 ? "rotate-180" : "rotate-0"}`}>
+                                {icons.chevron}
+                            </span>
+                        </div>
+                        <div className={`flex-col ${openNavbarMenuId === 6 ? "flex" : "hidden"}`}>
+                            {['Intent based triggers', 'Third Party Signals', 'All use cases'].map((item) => (
+                                <span key={item} className="text-xs md:text-sm py-3">
+                                    {item}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </NavbarMenuItem>
+                <NavbarMenuItem className="border-b-2 border-[#3e3e3e] pb-2">
+                    <div
+                        key={7}
+                        onPress={() => handleOpenNavbarMenu(7, !isOpenNavbarMenu)}
+                        className="relative" // To ensure proper hover containment
+                    >
+                        <div className="flex justify-between"
+                        >
+                            <p>Company</p>
+                            <span className={`mt-2 transition-transform transform ${openNavbarMenuId === 7 ? "rotate-180" : "rotate-0"}`}>
+                                {icons.chevron}
+                            </span>
+                        </div>
+                        <div className={`flex-col ${openNavbarMenuId === 7 ? "flex" : "hidden"}`}>
+                            {['Customers', 'About', 'Careers'].map((item) => (
+                                <span key={item} className="text-xs md:text-sm py-3">
+                                    {item}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </NavbarMenuItem>
+                <NavbarMenuItem className="border-b-2 border-[#3e3e3e] pb-2">
+                    <div
+                        key={8}
+                        onPress={() => handleOpenNavbarMenu(8, !isOpenNavbarMenu)}
+                        className="relative" // To ensure proper hover containment
+                    >
+                        <div className="flex justify-between"
+                        >
+                            <p>Resources</p>
+                            <span className={`mt-2 transition-transform transform ${openNavbarMenuId === 8 ? "rotate-180" : "rotate-0"}`}>
+                                {icons.chevron}
+                            </span>
+                        </div>
+                        <div className={`flex-col ${openNavbarMenuId === 8 ? "flex" : "hidden"}`}>
+                            {['Support', 'Blog'].map((item) => (
+                                <span key={item} className="text-xs md:text-sm py-3">
+                                    {item}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </NavbarMenuItem>
+                <NavbarMenuItem>
+                    <a href="/pricing">Pricing</a>
+                </NavbarMenuItem>
+                <NavbarMenuItem>
+                    <a href="/product-tour">Product Tour</a>
+                </NavbarMenuItem>
+            </NavbarMenu>
+
+            <NavbarContent justify="end" className="hidden lg:flex relative lg:left-12 xl:left-28">
                 <NavbarItem
                     className={`hidden lg:flex transition-transform duration-500 easeInOut ${isHidden
                         ? "opacity-0 translate-y-5 pointer-events-none"
@@ -543,6 +650,9 @@ export default function NavBar() {
                     <Button radius="sm" variant="solid" className="light">Get Started</Button>
                 </NavbarItem>
             </NavbarContent>
+
+
+
         </Navbar>
     );
 }

@@ -14,24 +14,25 @@ import {
 import { ArrowRight, Globe, Zap, Crown, UserPlus } from 'lucide-react'
 import Image from "next/image"
 
-export function SignalsCard({cardName, title, description ,imgPath, cardNameBg}) {
+export function SignalsCard({ cardName, title, description, imgPath, cardNameBg }) {
     return (
-        <Card className="dark bg-[#222222] backdrop-blur-xl border border-white/10 my-16 mx-28 py-12 pl-12">
+        <Card className="dark bg-[#222222] backdrop-blur-xl border border-white/10 my-16 mx-4 lg:mx-28 py-12 px-6 lg:pl-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-between">
                 {/* Left Column */}
                 <div className="space-y-8">
                     <div className="space-y-4">
-                        <div style={{ backgroundImage: `${cardNameBg}`, WebkitBackgroundClip: 'text', color: 'transparent', fontSize:"1.125rem", fontWeight: "500" }}>
+                        <div
+                            className="bg-clip-text text-transparent text-lg lg:font-medium"
+                            style={{ backgroundImage: cardNameBg }}
+                        >
                             {cardName}
                         </div>
-                        {/* <div style={{ backgroundImage: 'linear-gradient(90deg, #fea0cc, #f9ffb5)', WebkitBackgroundClip: 'text', color: 'transparent', fontSize:"1.125rem", fontWeight: "500" }}>
-                            {cardName}
-                        </div> */}
-                        <h2 className="text-4xl font-semibold text-white">
+
+                        <h2 className="text-2xl lg:text-4xl font-semibold text-white">
                             {title}
                         </h2>
                     </div>
-                    <p className="text-md max-w-[520px]">
+                    <p className="text-base lg:text-medium max-w-[520px]">
                         {description}
                     </p>
                     <Button

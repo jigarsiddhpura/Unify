@@ -96,10 +96,10 @@ export function TestimonialCarousel() {
             <div className="max-w-7xl mx-auto">
                 <div className="flex justify-between items-start mb-12">
                     <div className="space-y-4">
-                        <h2 className="text-4xl md:text-5xl font-medium text-white">
+                        <h2 className="text-2xl lg:text-5xl font-medium text-white">
                             What our customers are saying
                         </h2>
-                        <p className="text-gray-400 text-lg">
+                        <p className="text-gray-400 text-sm lg:text-lg">
                             Go-to-market leaders at high growth companies rely on Unify to hit revenue goals
                         </p>
                     </div>
@@ -110,7 +110,7 @@ export function TestimonialCarousel() {
                             variant="flat"
                             className="bg-gray-800/50 text-white"
                             isDisabled={!canScrollLeft}
-                            onClick={handlePrevious}
+                            onPress={handlePrevious}
                         >
                             <ArrowLeft className="w-4 h-4" />
                         </Button>
@@ -119,7 +119,7 @@ export function TestimonialCarousel() {
                             variant="flat"
                             className="bg-gray-800/50 text-white"
                             isDisabled={!canScrollRight}
-                            onClick={handleNext}
+                            onPress={handleNext}
                         >
                             <ArrowRight className="w-4 h-4" />
                         </Button>
@@ -134,7 +134,7 @@ export function TestimonialCarousel() {
                         {testimonials.map((testimonial, index) => (
                             <Card
                                 key={index}
-                                className="flex-none w-full md:w-[calc(33.333%-20px)] bg-[#222222] backdrop-blur-sm border-2 border-gray-500"
+                                className="flex-none w-5/6 sm:w- md:w-[calc(33.333%-20px)] bg-[#222222] backdrop-blur-sm border-2 border-gray-500"
                             >
                                 <div className="py-8 px-4 space-y-36">
                                     <div className="space-y-8">

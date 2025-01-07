@@ -24,10 +24,10 @@ export default function Home() {
 
       <TestimonialCarousel />
 
-      <section className="flex flex-col h-96 text-center space-y-6 mx-96 justify-center items-center tracking-wide">
+      <section className="flex flex-col h-96 text-center space-y-6 mx-12 xl:mx-96 justify-center items-center tracking-wide">
         <h3 className="font-bold text-3xl">Connect with buyers when it matters</h3>
         <p className="text-gray-500 font-semibold">High growth companies like Justworks, Lattice, Guru, and OpenPhone power go-to-market with Unify.</p>
-        <div className="flex space-x-4">
+        <div className="flex flex-col md:flex-row gap-4">
           <Input
             type="email"
             placeholder="What's your work email?"
