@@ -33,6 +33,11 @@ export default function Home() {
             placeholder="What's your work email?"
             size="lg"
             className="bg-gray-800/50 border-1 border-white rounded-sm w-80"
+            classNames={{
+              input: "text-center lg:text-left",
+              // inputWrapper: "text-center",
+              // placeholder: "text-center placeholder:text-center"
+            }}
           />
           <Button
             size="lg"
@@ -44,7 +49,7 @@ export default function Home() {
         <span className="text-sm text-gray-500">Set up Unify in minutes</span>
       </section>
 
-      <Footer/>
+      <Footer />
     </main>
 
   );

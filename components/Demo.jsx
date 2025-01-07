@@ -37,8 +37,8 @@ export default function Demo() {
                                 size="lg"
                                 className="bg-gray-800/50 border-1 border-white rounded-sm w-80"
                                 classNames={{
-                                    input: "text-center",
-                                    inputWrapper: "text-center"
+                                    input: "text-center lg:text-left",
+                                    // inputWrapper: "text-center"
                                 }}
                             />
                             <Button
@@ -54,14 +54,14 @@ export default function Demo() {
                     {/* Right Column */}
                     <div className="relative rounded-2xl overflow-hidden bg-gray-900/50 backdrop-blur-sm hover:border-gray-400">
                         <div className="aspect-video">
-                            <video
+                            {/* <video
                                 controls
                                 className="w-full h-full"  // Better than inline styles
                                 playsInline  // Important for mobile devices
                             >
                                 <source src={DemoS3VideoUrl} type="video/mp4" />
                                 Your browser does not support the video tag.
-                            </video>
+                            </video> */}
                         </div>
                     </div>
                 </div>
