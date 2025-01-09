@@ -54,14 +54,14 @@ export default function Demo() {
                     {/* Right Column */}
                     <div className="relative rounded-2xl overflow-hidden bg-gray-900/50 backdrop-blur-sm hover:border-gray-400">
                         <div className="aspect-video">
-                            {/* <video
+                            <video
                                 controls
                                 className="w-full h-full"  // Better than inline styles
                                 playsInline  // Important for mobile devices
                             >
                                 <source src={DemoS3VideoUrl} type="video/mp4" />
                                 Your browser does not support the video tag.
-                            </video> */}
+                            </video>
                         </div>
                     </div>
                 </div>
