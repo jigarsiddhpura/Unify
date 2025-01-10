@@ -100,7 +100,7 @@ export function TestimonialCarousel() {
                             What our customers are saying
                         </h2>
                         <p className="text-gray-400 text-sm lg:text-lg">
-                            Go-to-market leaders at high growth companies rely on Unify to hit revenue goals
+                            Go-to-market leaders at high growth companies rely on Nova to hit revenue goals
                         </p>
                     </div>
 

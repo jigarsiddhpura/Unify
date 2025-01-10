@@ -48,7 +48,7 @@ export default function Demo() {
                                 Get started
                             </Button>
                         </div>
-                        <span className="text-sm text-gray-500">Set up Unify in minutes</span>
+                        <span className="text-sm text-gray-500">Set up Nova in minutes</span>
                     </div>
 
                     {/* Right Column */}

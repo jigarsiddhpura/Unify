@@ -269,7 +269,7 @@ export default function NavBar() {
     return (
         <Navbar className="dark py-2 w-full">
             <NavbarBrand className="relative lg:right-12 xl:right-24">
-                <Image src="/logo2.png" alt="Logo" width="320" height="120" ></Image>
+                <Image src="/logo2.png" alt="Logo" width="90" height="90" ></Image>
             </NavbarBrand>
 
             <NavbarContent className="hidden lg:flex  lg:gap-3" justify="center">
