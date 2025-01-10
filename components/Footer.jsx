@@ -2,17 +2,18 @@ import Link from 'next/link'
 import { Twitter, Linkedin, Youtube } from 'lucide-react'
 
 const footerLinks = {
-    Product: ['Signals', 'Plays', 'Sequences', 'AI Agents', 'Analytics'],
-    Company: ['Customers', 'Pricing', 'Careers', 'About', 'Security'],
-    Resources: ['Use Cases', 'Product Tour', 'Support', 'Blog'],
-    Comparisons: ['Clay', 'Warmly', 'Koala', 'Common Room', 'RB2B'],
-    'Free Tools': ['Email Coach', 'Sales Call Notes']
-}
+    Solutions: ['Market Insights', 'Workflow Automation', 'Engagement Hub', 'AI Assistants', 'Performance Metrics'],
+    About: ['Our Clients', 'Plans & Pricing', 'Join Us', 'Our Mission', 'Data Privacy'],
+    Resources: ['Case Studies', 'Platform Demo', 'Knowledge Base', 'Insights Hub'],
+    Comparisons: ['LeadPilot', 'OutreachMax', 'EngageAI', 'CustomerSphere', 'SalesNexus'],
+    'Free Tools': ['Campaign Planner', 'Follow-Up Templates']
+};
+
 
 const socialLinks = [
-    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/unify' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/unify' },
-    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/unify' }
+    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/nova' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/nova' },
+    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/nova' }
 ]
 
 export function Footer() {
@@ -46,7 +47,7 @@ export function Footer() {
                 {/* Bottom Footer */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between space-y-4 md:space-y-0">
                     <div className="flex flex-col md:flex-row flex-wrap md:items-center gap-x-6 gap-y-2">
-                        <span>Unify © 2025</span>
+                        <span>Nova © 2025</span>
                         <Link href="#" className="hover:text-white transition-colors duration-200">
                             Terms
                         </Link>

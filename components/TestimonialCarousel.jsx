@@ -8,70 +8,70 @@ import Image from 'next/image'
 // Testimonial data
 const testimonials = [
     {
-        company: 'Justworks',
-        logo: '/logos/justworks.svg',
-        title: 'Justworks Sees 6.8X ROI in the First 5 Months With Unify',
+        company: 'AWS',
+        logo: '/logos/aws.webp',
+        title: 'AWS Achieves 7X Revenue Acceleration in 6 Months with Nexus',
         author: {
-            name: 'Peter Nguyen',
-            role: 'Senior Manager, Growth Marketing',
+            name: 'Daniel Harper',
+            role: 'VP of Growth Strategy',
         }
     },
     {
-        company: 'Vantage',
-        logo: '/logos/vantage.svg',
-        title: 'Vantage Increases Meetings Booked with Enterprise Accounts by 20% Using Unify',
+        company: 'Creators',
+        logo: '/logos/creators.webp',
+        title: 'Creators Expedition boosts Enterprise Deals by 25% Using Nexus Automation',
         author: {
-            name: 'Carver Marshall',
-            role: 'Director of Business Development',
+            name: 'Amelia Reed',
+            role: 'Head of Business Innovation',
         }
     },
     // Additional testimonials to demonstrate scrolling
     {
-        company: 'Lattice',
-        logo: '/logos/lattice.avif',
-        title: 'Lattice Achieves 40% Increase in Sales Productivity with Unify',
+        company: 'Ff',
+        logo: '/logos/ff.webp',
+        title: 'Female Founders Drives 50% Efficiency in Sales Operations with Nexus',
         author: {
-            name: 'Sarah Chen',
-            role: 'Head of Revenue Operations',
+            name: 'Ethan Chang',
+            role: 'Revenue Operations Manager',
         }
     },
     {
-        company: 'Abacum',
-        logo: '/logos/abacum.svg',
-        title: 'How Abacum Streamlined Their Sales Process Using Unify',
+        company: 'Lift',
+        logo: '/logos/lift.webp',
+        title: 'How LIFT Labs Transformed Lead Management Using Nexus',
         author: {
-            name: 'Miguel Rodriguez',
-            role: 'Sales Operations Manager',
+            name: 'Isabella Martinez',
+            role: 'Lead Operations Specialist',
         }
     },
     {
-        company: 'HyperComply',
-        logo: '/logos/hypercomply.svg',
-        title: 'HyperComply Reduces Sales Cycle by 30% with Unify Integration',
+        company: 'Microsoft',
+        logo: '/logos/microsoft.webp',
+        title: 'Microsoft for startups Shortens Deal Closing Time by 35% with Nexus',
         author: {
-            name: 'Lisa Park',
-            role: 'Director of Sales',
+            name: 'Sophia Bennett',
+            role: 'Sales Enablement Director',
         }
     },
     {
-        company: 'Footprint',
-        logo: '/logos/footprint.svg',
-        title: 'Footprint Scales Account Management Operations with Unify',
+        company: 'Nash',
+        logo: '/logos/nash.avif',
+        title: 'Nash Expands Client Retention with Nexus’s Advanced Insights',
         author: {
-            name: 'James Wilson',
-            role: 'Customer Success Director',
+            name: 'Michael Carter',
+            role: 'Customer Experience Manager',
         }
     },
     {
-        company: 'Speechify',
-        logo: '/logos/speechify.svg',
-        title: 'Speechify Boosts Customer Engagement Metrics Using Unify',
+        company: 'Quince',
+        logo: '/logos/quince.avif',
+        title: 'Quince Sees 3X Growth in Engagement Metrics Powered by Nexus',
         author: {
-            name: 'Emma Thompson',
-            role: 'Growth Lead',
+            name: 'Olivia Brooks',
+            role: 'Content Strategy Lead',
         }
     },
-]
+];
 
 export function TestimonialCarousel() {
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -129,7 +129,7 @@ export function TestimonialCarousel() {
                 <div className="relative overflow-hidden">
                     <div
                         className="flex gap-6 transition-transform duration-300 ease-in-out"
-                        style={{ transform: `translateX(-${currentIndex * (85)}%)` }}
+                        style={{ transform: `translateX(-${currentIndex * (33)}%)` }}
                     >
                         {testimonials.map((testimonial, index) => (
                             <Card

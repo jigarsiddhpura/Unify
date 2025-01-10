@@ -6,7 +6,7 @@ import WordRotate from "@/components/ui/word-rotate";
 import { Input, Button } from "@nextui-org/react"
 
 export default function Demo() {
-    const DemoS3VideoUrl = process.env.UNIFY_VIDEO_URL; 
+    const DemoS3VideoUrl = process.env.UNIFY_VIDEO_URL;
 
     return (
         <main className="dark relative overflow-hidden px-4 xl:pl-32 xl:pr-16 flex justify-center items-center">
@@ -18,16 +18,16 @@ export default function Demo() {
                     <div className="space-y-8 text-center lg:text-left">
                         <div className="space-y-4 ">
                             <span className="text-3xl md:text-6xl font-bold text-gray-400">
-                                The future of
+                                Unlock the power of
                                 <WordRotate
                                     className="font-bold text-black dark:text-gray-100"
-                                    words={["warm outboud", "pipeline generation", "AI and sales", "go-to-market"]}
+                                    words={["smart outreach", "revenue acceleration", "AI-driven insights", "market dominance"]}
                                 />
                             </span>
                             <span className="text-lg max-w-xl">
-                                Drive pipeline with 10+ intent data sources, AI, and automation. Scale
-                                prospecting, personalization, and engagement in one unified workflow.
+                                Accelerate growth with data-powered insights, intelligent automation, and seamless workflows. Revolutionize prospecting, engagement, and performance at scale.
                             </span>
+
                         </div>
 
                         <div className="flex flex-col lg:flex-row gap-4 items-center sm:relative lg:left-36 lg:static">
