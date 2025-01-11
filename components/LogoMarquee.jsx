@@ -5,19 +5,19 @@ import Link from 'next/link'
 import { ArrowRight, Star } from 'lucide-react'
 
 const logos = [
-    { name: 'Abacum', url: 'https://www.abacum.io/', image: '/logos/quince.avif' },
-    { name: 'Airbyte', url: 'https://www.hightouch.com/', image: '/logos/wpt.avif' },
-    { name: 'Footprint', url: 'https://onefootprint.com/', image: '/logos/nash.avif' },
-    { name: 'Vantage', url: 'https://www.vantage.sh/', image: '/logos/vantage.svg' },
-    { name: 'Guru', url: 'https://www.hightouch.com/', image: '/logos/ff.webp' },
-    { name: 'High Touch', url: 'https://www.hightouch.com/', image: '/logos/techstars.webp' },
-    { name: 'HyperComply', url: 'https://www.hypercomply.com/', image: '/logos/creators.webp' },
-    { name: 'Justworks', url: 'https://www.justworks.com/', image: '/logos/lift.webp' },
-    { name: 'Lattice', url: 'https://lattice.com/', image: '/logos/microsoft.webp' },
-    { name: 'Spot ai', url: 'https://www.hightouch.com/', image: '/logos/spotai.svg' },
+    { name: 'Abacum', url: 'https://www.abacum.io/', image: '/logos/abacum.svg' },
+    { name: 'Airbyte', url: 'https://www.hightouch.com/', image: '/logos/airbyte.avif' },
+    { name: 'Footprint', url: 'https://onefootprint.com/', image: '/logos/footprint.svg' },
+    { name: 'Guru', url: 'https://www.hightouch.com/', image: '/logos/guru.svg' },
+    { name: 'High Touch', url: 'https://www.hightouch.com/', image: '/logos/hightouch.png' },
+    { name: 'HyperComply', url: 'https://www.hypercomply.com/', image: '/logos/hypercomply.svg' },
+    { name: 'Justworks', url: 'https://www.justworks.com/', image: '/logos/justworks.svg' },
+    { name: 'Lattice', url: 'https://lattice.com/', image: '/logos/lattice.avif' },
     { name: 'Open house', url: 'https://www.hightouch.com/', image: '/logos/openhouse.svg' },
-    { name: 'Sofi', url: 'https://www.hightouch.com/', image: '/logos/aws.webp' },
+    { name: 'Sofi', url: 'https://www.hightouch.com/', image: '/logos/sofi.png' },
     { name: 'Speecify', url: 'https://www.hightouch.com/', image: '/logos/speechify.svg' },
+    { name: 'Spot ai', url: 'https://www.hightouch.com/', image: '/logos/spotai.svg' },
+    { name: 'Vantage', url: 'https://www.vantage.sh/', image: '/logos/vantage.svg' },
 ]
 
 export function LogoMarquee() {
@@ -26,7 +26,7 @@ export function LogoMarquee() {
             <section className="w-full py-12 overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4">
                     <h2 className="text-center text-2xl md:text-3xl font-medium text-white mb-12">
-                        Endorsed by leading teams in sales, marketing, and business strategy across the globe.
+                        Trusted by hundreds of the world&apos;s most innovative sales, marketing and growth teams.
                     </h2>
 
                     <div className="relative w-full">
@@ -99,8 +99,8 @@ export function LogoMarquee() {
             </section>
             {/* md:ml-36 md:px-0 */}
             <section className=' space-y-5 text-center lg:text-left  pb-8 mt-8 lg:mx-28'>
-                <h1 className='font-bold text-4xl'>A comprehensive platform for smart outreach.</h1>
-                <h3 className="text-[#8b8b8b] text-">Bring your boldest growth strategies – we’ll empower your vision and streamline the delivery.</h3>
+                <h1 className='font-bold text-4xl'>An all-in-one solution for warm outbound.</h1>
+                <h3 className="text-[#8b8b8b] text-">Bring your most creative go-to-market ideas – we handle the execution.</h3>
             </section>
         </div>
     )

@@ -269,7 +269,7 @@ export default function NavBar() {
     return (
         <Navbar className="dark py-2 w-full">
             <NavbarBrand className="relative lg:right-12 xl:right-24">
-                <Image src="/logo2.png" alt="Logo" width="90" height="90" ></Image>
+                <Image src="/logo.svg" alt="Logo" width="90" height="90" ></Image>
             </NavbarBrand>
 
             <NavbarContent className="hidden lg:flex  lg:gap-3" justify="center">
@@ -313,9 +313,9 @@ export default function NavBar() {
                                             <FaFire className="w-5 h-5 text-amber-700" />
                                         </div>
                                         <div className="flex flex-col gap-1">
-                                            <span className="text-base font-medium">Insights</span>
+                                            <span className="text-base font-medium">Signals</span>
                                             <p className="text-sm text-gray-500">
-                                                Gain actionable intelligence with 10+ data points to understand buyer intent and craft targeted audiences.
+                                                Use 10+ signals to capture buyer intent and build Audiences
                                             </p>
                                         </div>
                                     </a>
@@ -328,9 +328,9 @@ export default function NavBar() {
                                             <FaProjectDiagram className="w-5 h-5 text-teal-700" />
                                         </div>
                                         <div className="flex flex-col gap-1">
-                                            <span className="text-base font-medium">Workflows</span>
+                                            <span className="text-base font-medium">Plays</span>
                                             <p className="text-sm text-gray-500">
-                                                Automate prospecting, enrichment, and sequencing into a streamlined workflow.
+                                                One workflow to prospect, enrich, and sequence on autopilot
                                             </p>
                                         </div>
                                     </a>
@@ -344,10 +344,10 @@ export default function NavBar() {
                                         </div>
                                         <div className="flex flex-col gap-1">
                                             <span className="text-base font-medium">
-                                                AI-Powered Assistants
+                                                Sequences
                                             </span>
                                             <p className="text-sm text-gray-500">
-                                                Leverage AI to identify leads, research deeply, and deliver personalized communication efficiently.
+                                                Engage buyers with multi-touch outbound and managed deliverability
                                             </p>
                                         </div>
                                     </a>
@@ -361,10 +361,10 @@ export default function NavBar() {
                                         </div>
                                         <div className="flex flex-col gap-1">
                                             <span className="text-base font-medium">
-                                                Performance Metrics
+                                                AI Agents
                                             </span>
                                             <p className="text-sm text-gray-500">
-                                                Track campaign performance, pipeline progress, email statistics, and more through advanced analytics.
+                                                Use AI to research leads and personalize messaging at scale
                                             </p>
                                         </div>
                                     </a>
@@ -378,10 +378,11 @@ export default function NavBar() {
                                         </div>
                                         <div className="flex flex-col gap-1">
                                             <span className="text-base font-medium">
-                                                Campaign Manager
+                                                Analytics & Dashboards
                                             </span>
                                             <p className="text-sm text-gray-500">
-                                                Orchestrate multi-channel outreach campaigns with seamless delivery and consistent engagement.
+                                                Understand Play performance, pipeline generation, email metrics,
+                                                and more
                                             </p>
                                         </div>
                                     </a>
@@ -421,13 +422,13 @@ export default function NavBar() {
                                 Use Cases
                             </DropdownItem>
                             <DropdownItem key="new" className="py-3 pr-4 mb-1">
-                                External Data Integration
+                                Intent based triggers
                             </DropdownItem>
                             <DropdownItem key="copy" className="py-3 pr-4 mb-1">
-                                Trigger Automation
+                                Third party signals
                             </DropdownItem>
                             <DropdownItem key="edit" className="py-3 pr-4 mb-1">
-                                Explore All Scenarios
+                                All use cases
                             </DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
@@ -460,10 +461,10 @@ export default function NavBar() {
                         </DropdownTrigger>
                         <DropdownMenu aria-label="Action event example" className="dark">
                             <DropdownItem key="header" className="text-gray-400 deactivate-hover">Company</DropdownItem>
-                            <DropdownItem key="new" className="py-3 pr-4 mb-1">Our Clients</DropdownItem>
-                            <DropdownItem key="copy" className="py-3 pr-4 mb-1">Who We Are</DropdownItem>
-                            <DropdownItem key="careers" className="py-3 pr-4 mb-1">Join Our Team</DropdownItem>
-                            <DropdownItem key="partner" className="py-3 pr-4 mb-1">Collaborate With Us</DropdownItem>
+                            <DropdownItem key="new" className="py-3 pr-4 mb-1">Customer</DropdownItem>
+                            <DropdownItem key="copy" className="py-3 pr-4 mb-1">About</DropdownItem>
+                            <DropdownItem key="careers" className="py-3 pr-4 mb-1">Careers</DropdownItem>
+                            <DropdownItem key="partner" className="py-3 pr-4 mb-1">Partner</DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
                 </div>
@@ -495,15 +496,15 @@ export default function NavBar() {
                         </DropdownTrigger>
                         <DropdownMenu aria-label="Action event example" className="dark">
                             <DropdownItem key="header" className="text-gray-400 deactivate-hover">Resources</DropdownItem>
-                            <DropdownItem key="new" className="py-3 pr-4 mb-1">Insights Hub</DropdownItem>
-                            <DropdownItem key="copy" className="py-3 pr-4 mb-1">Help Center</DropdownItem>
+                            <DropdownItem key="new" className="py-3 pr-4 mb-1">Support</DropdownItem>
+                            <DropdownItem key="copy" className="py-3 pr-4 mb-1">Blog</DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
                 </div>
 
                 <NavbarItem>
                     <Link color="foreground" href="#">
-                    Plans
+                        Pricing
                     </Link>
                 </NavbarItem>
 
@@ -512,7 +513,7 @@ export default function NavBar() {
                         }`}
                 >
                     <Link color="foreground" href="#">
-                    Explore Platform
+                        Product tour
                     </Link>
                 </NavbarItem>
 

@@ -6,7 +6,7 @@ import WordRotate from "@/components/ui/word-rotate";
 import { Input, Button } from "@nextui-org/react"
 
 export default function Demo() {
-    const DemoS3VideoUrl = process.env.UNIFY_VIDEO_URL;
+    const DemoS3VideoUrl = process.env.UNIFY_VIDEO_URL; 
 
     return (
         <main className="dark relative overflow-hidden px-4 xl:pl-32 xl:pr-16 flex justify-center items-center">
@@ -18,16 +18,16 @@ export default function Demo() {
                     <div className="space-y-8 text-center lg:text-left">
                         <div className="space-y-4 ">
                             <span className="text-3xl md:text-6xl font-bold text-gray-400">
-                                Unlock the power of
+                                The future of
                                 <WordRotate
                                     className="font-bold text-black dark:text-gray-100"
-                                    words={["smart outreach", "revenue acceleration", "AI-driven insights", "market dominance"]}
+                                    words={["warm outboud", "pipeline generation", "AI and sales", "go-to-market"]}
                                 />
                             </span>
                             <span className="text-lg max-w-xl">
-                                Accelerate growth with data-powered insights, intelligent automation, and seamless workflows. Revolutionize prospecting, engagement, and performance at scale.
+                                Drive pipeline with 10+ intent data sources, AI, and automation. Scale
+                                prospecting, personalization, and engagement in one unified workflow.
                             </span>
-
                         </div>
 
                         <div className="flex flex-col lg:flex-row gap-4 items-center sm:relative lg:left-36 lg:static">
@@ -48,7 +48,7 @@ export default function Demo() {
                                 Get started
                             </Button>
                         </div>
-                        <span className="text-sm text-gray-500">Set up Nova in minutes</span>
+                        <span className="text-sm text-gray-500">Set up Unify in minutes</span>
                     </div>
 
                     {/* Right Column */}

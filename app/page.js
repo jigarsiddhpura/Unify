@@ -12,21 +12,21 @@ export default function Home() {
       <Demo />
       <LogoMarquee />
 
-      <SignalsCard cardName="Workflow Automation" title="Streamline and scale your operations" description="Harness powerful tools to automate prospecting, data enrichment, and lead management. Transform repetitive tasks into seamless workflows." imgPath="/attio.avif" cardNameBg="linear-gradient(90deg, #fdffa8, #b2ffed)" />
+      <SignalsCard cardName="Signals & Data" title="Act on buyers at the right time" description="Use 10+ data sources to identify when prospects are ready to buy. Get best-in-class 1st and 3rd party signals out of the box." imgPath="/signalsanddata.avif" cardNameBg="linear-gradient(90deg, #fea0cc, #f9ffb5)" />
 
-      <SignalsCard cardName="Engagement Hub" title="Engage buyers with precision" description="Leverage multi-channel engagement to connect with your audience. Deliver personalized experiences and maximize conversion rates." imgPath="/agewise.webp" cardNameBg="linear-gradient(90deg, #b8b6ff, #84d4ee)" />
+      <SignalsCard cardName="Plays" title="Build and scale automated Plays" description="Plays are the most powerful canvas for scaling your revenue team's creativity. Craft custom prospecting, enrichment, AI research, and sequencing workflows that run on autopilot." imgPath="/plays.png" cardNameBg="linear-gradient(90deg, #fdffa8, #b2ffed)" />
 
-      <SignalsCard cardName="AI Research Assistants" title="AI-powered tools for actionable insights" description="Deploy AI-driven tools to gather deep insights, conduct personalized research, and refine your outreach strategies at scale." imgPath="/appointwise2.avif" cardNameBg="linear-gradient(90deg, #b8b6ff, #84d4ee)" />
+      <SignalsCard cardName="Sequences" title="Natively engage buyers at scale" description="Reach buyers where they are with multi-touch Sequences. Send personalized messages directly through Unify, backed by managed deliverability to boost pipeline and drive replies." imgPath="/sequences.png" cardNameBg="linear-gradient(90deg, #b8b6ff, #84d4ee)" />
 
-      <SignalsCard cardName="Performance Metrics" title="Visualize success and optimize outcomes" description="Track key metrics and refine your strategies. Attribute success to specific workflows and amplify what works best." imgPath="/invest.png" cardNameBg="linear-gradient(90deg, #e6cdf9, #ffd2b1)" />
+      <SignalsCard cardName="AI Agents" title="AI Agents created to prospect" description="Leverage our Agent to scale account research and 1:1 personalized messaging. Use AI to scrape websites, Google, pull CRM data, and more." imgPath="/ai-agents.avif" cardNameBg="linear-gradient(90deg, #b8b6ff, #84d4ee)" />
 
-      <SignalsCard cardName="Market Insights" title="Act on trends before your competitors" description="Utilize 10+ intelligence sources to uncover buyer trends and predict demand shifts. Access real-time data to stay ahead." imgPath="/competition.webp" cardNameBg="linear-gradient(90deg, #fea0cc, #f9ffb5)" />
+      <SignalsCard cardName="Analytics & Dashboards" title="End-to-end reporting and analytics" description="Quickly identify and double down on your most effective plays. Attribute pipeline and revenue to plays out-of-the-box." imgPath="/analytics.png" cardNameBg="linear-gradient(90deg, #e6cdf9, #ffd2b1)" />
 
       <TestimonialCarousel />
 
       <section className="flex flex-col h-96 text-center space-y-6 mx-12 xl:mx-96 justify-center items-center tracking-wide">
-        <h3 className="font-bold text-3xl">Connect with buyers when it counts</h3>
-        <p className="text-gray-500 font-semibold">Industry leaders like Notion, Figma, Airtable, and Stripe rely on us to transform their go-to-market strategies.</p>
+        <h3 className="font-bold text-3xl">Connect with buyers when it matters</h3>
+        <p className="text-gray-500 font-semibold">High growth companies like Justworks, Lattice, Guru, and OpenPhone power go-to-market with Unify.</p>
         <div className="flex flex-col md:flex-row gap-4">
           <Input
             type="email"
@@ -46,7 +46,7 @@ export default function Home() {
             Get started
           </Button>
         </div>
-        <span className="text-sm text-gray-500">Set up Nova in minutes</span>
+        <span className="text-sm text-gray-500">Set up Unify in minutes</span>
       </section>
 
       <Footer />

@@ -8,70 +8,70 @@ import Image from 'next/image'
 // Testimonial data
 const testimonials = [
     {
-        company: 'AWS',
-        logo: '/logos/aws.webp',
-        title: 'AWS Achieves 7X Revenue Acceleration in 6 Months with Nexus',
+        company: 'Justworks',
+        logo: '/logos/justworks.svg',
+        title: 'Justworks Sees 6.8X ROI in the First 5 Months With Unify',
         author: {
-            name: 'Daniel Harper',
-            role: 'VP of Growth Strategy',
+            name: 'Peter Nguyen',
+            role: 'Senior Manager, Growth Marketing',
         }
     },
     {
-        company: 'Creators',
-        logo: '/logos/creators.webp',
-        title: 'Creators Expedition boosts Enterprise Deals by 25% Using Nexus Automation',
+        company: 'Vantage',
+        logo: '/logos/vantage.svg',
+        title: 'Vantage Increases Meetings Booked with Enterprise Accounts by 20% Using Unify',
         author: {
-            name: 'Amelia Reed',
-            role: 'Head of Business Innovation',
+            name: 'Carver Marshall',
+            role: 'Director of Business Development',
         }
     },
     // Additional testimonials to demonstrate scrolling
     {
-        company: 'Ff',
-        logo: '/logos/ff.webp',
-        title: 'Female Founders Drives 50% Efficiency in Sales Operations with Nexus',
+        company: 'Lattice',
+        logo: '/logos/lattice.avif',
+        title: 'Lattice Achieves 40% Increase in Sales Productivity with Unify',
         author: {
-            name: 'Ethan Chang',
-            role: 'Revenue Operations Manager',
+            name: 'Sarah Chen',
+            role: 'Head of Revenue Operations',
         }
     },
     {
-        company: 'Lift',
-        logo: '/logos/lift.webp',
-        title: 'How LIFT Labs Transformed Lead Management Using Nexus',
+        company: 'Abacum',
+        logo: '/logos/abacum.svg',
+        title: 'How Abacum Streamlined Their Sales Process Using Unify',
         author: {
-            name: 'Isabella Martinez',
-            role: 'Lead Operations Specialist',
+            name: 'Miguel Rodriguez',
+            role: 'Sales Operations Manager',
         }
     },
     {
-        company: 'Microsoft',
-        logo: '/logos/microsoft.webp',
-        title: 'Microsoft for startups Shortens Deal Closing Time by 35% with Nexus',
+        company: 'HyperComply',
+        logo: '/logos/hypercomply.svg',
+        title: 'HyperComply Reduces Sales Cycle by 30% with Unify Integration',
         author: {
-            name: 'Sophia Bennett',
-            role: 'Sales Enablement Director',
+            name: 'Lisa Park',
+            role: 'Director of Sales',
         }
     },
     {
-        company: 'Nash',
-        logo: '/logos/nash.avif',
-        title: 'Nash Expands Client Retention with Nexus’s Advanced Insights',
+        company: 'Footprint',
+        logo: '/logos/footprint.svg',
+        title: 'Footprint Scales Account Management Operations with Unify',
         author: {
-            name: 'Michael Carter',
-            role: 'Customer Experience Manager',
+            name: 'James Wilson',
+            role: 'Customer Success Director',
         }
     },
     {
-        company: 'Quince',
-        logo: '/logos/quince.avif',
-        title: 'Quince Sees 3X Growth in Engagement Metrics Powered by Nexus',
+        company: 'Speechify',
+        logo: '/logos/speechify.svg',
+        title: 'Speechify Boosts Customer Engagement Metrics Using Unify',
         author: {
-            name: 'Olivia Brooks',
-            role: 'Content Strategy Lead',
+            name: 'Emma Thompson',
+            role: 'Growth Lead',
         }
     },
-];
+]
 
 export function TestimonialCarousel() {
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -100,7 +100,7 @@ export function TestimonialCarousel() {
                             What our customers are saying
                         </h2>
                         <p className="text-gray-400 text-sm lg:text-lg">
-                            Go-to-market leaders at high growth companies rely on Nova to hit revenue goals
+                            Go-to-market leaders at high growth companies rely on Unify to hit revenue goals
                         </p>
                     </div>
 
@@ -129,7 +129,7 @@ export function TestimonialCarousel() {
                 <div className="relative overflow-hidden">
                     <div
                         className="flex gap-6 transition-transform duration-300 ease-in-out"
-                        style={{ transform: `translateX(-${currentIndex * (33)}%)` }}
+                        style={{ transform: `translateX(-${currentIndex * (85)}%)` }}
                     >
                         {testimonials.map((testimonial, index) => (
                             <Card

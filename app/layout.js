@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Nova",
+  title: "Unify",
   description: "Future of AI sales",
 };
 
